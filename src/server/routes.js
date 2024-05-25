@@ -1,11 +1,11 @@
-const postPredictHandler = require('../server/handler');
+const { postPredictHandler, getAllPredictionsHandler } = require('../server/handler');
 
 const routes = [
     {
         path: '/',
         method: 'GET',
         handler: (request, h) => {
-            return 'Hello, worldz!';
+            return 'Hello, worldzz!';
         }
     },
     {
@@ -19,6 +19,11 @@ const routes = [
                 allow: 'multipart/form-data'
             }
         }
+    },
+    {
+        path: '/predict/histories',
+        method: 'GET',
+        handler: getAllPredictionsHandler,
     }
 ]
 
